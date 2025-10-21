@@ -118,4 +118,16 @@ function createAddQuoteForm() {
 
 
 
+// ✅ Initialize application
+document.addEventListener('DOMContentLoaded', function() {
+  populateCategories();
+  createAddQuoteForm(); // required for earlier tasks
+  document.getElementById('newQuote').addEventListener('click', showRandomQuote);
+  document.getElementById('categoryFilter').value = lastSelectedCategory;
+  showRandomQuote();
+
+  // Initial server sync via the required function
+  syncQuotes();
+});
+
 
